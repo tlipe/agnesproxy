@@ -216,8 +216,9 @@ async fn run_init(proxy_port: u16, headroom_port: u16, upstream: String, is_dire
     tokio::time::sleep(std::time::Duration::from_secs(3)).await;
     eprintln!("[INIT] headroom spawned, continuando...");
     println!();
-    println!("OpenCode:");
-    println!("  Endpoint: http://127.0.0.1:{}/v1", headroom_port);
+    println!("Endpoints:");
+    println!("  Headroom: http://127.0.0.1:{}/v1", headroom_port);
+    println!("  Proxy:    http://127.0.0.1:{}/v1", proxy_port);
     println!("  API Key:  key123");
     println!();
 

@@ -14,7 +14,7 @@ Proxy de rotação automática de tokens para AgnesAI. Gerencia múltiplos token
 
 ```mermaid
 graph LR
-    A[Cliente<br/>OpenCode] -->|:9010| B[Headroom AI<br/>Cache + Rate Limit]
+    A[Cliente<br/>OpenAI-compatível] -->|:9010| B[Headroom AI<br/>Cache + Rate Limit]
     B -->|:9020| C[Agnes Proxy<br/>Token Rotation]
     C --> D[AgnesAI API]
     
@@ -58,10 +58,32 @@ cargo build --release
 
 ## Uso
 
-### Com OpenCode
+Qualquer cliente OpenAI-compatível. Configure `BASE_URL` para `http://127.0.0.1:9010/v1`.
+
+### OpenCode
 
 ```bash
 OPENAI_BASE_URL=http://127.0.0.1:9010/v1 open-code
+```
+
+### Claude Code
+
+```bash
+ANTHROPIC_BASE_URL=http://127.0.0.1:9010 claude
+```
+
+### Codex / OpenAI CLI
+
+```bash
+OPENAI_BASE_URL=http://127.0.0.1:9010/v1 codex
+```
+
+### Cursor / IDE
+
+Adicione nas variáveis de ambiente:
+```
+OPENAI_BASE_URL=http://127.0.0.1:9010/v1
+OPENAI_API_KEY=key123
 ```
 
 ### Endpoint direto
@@ -69,6 +91,7 @@ OPENAI_BASE_URL=http://127.0.0.1:9010/v1 open-code
 ```bash
 curl http://127.0.0.1:9020/v1/chat/completions \
   -H "Content-Type: application/json" \
+  -H "Authorization: Bearer key123" \
   -d '{
     "model": "agnes-2.5-flash",
     "messages": [{"role": "user", "content": "Hello"}]

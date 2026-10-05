@@ -12,18 +12,16 @@ Proxy de rotação automática de tokens para AgnesAI. Gerencia múltiplos token
 
 ## Arquitetura
 
-```
-┌─────────────┐      ┌─────────────────────┐      ┌───────────────────┐      ┌─────────────┐
-│   Cliente   │ ───▶ │  Headroom (9010)    │ ───▶ │  Agnes Proxy      │ ───▶ │  AgnesAI    │
-│  (OpenCode) │      │                     │      │     (9020)        │      │     API     │
-└─────────────┘      └─────────────────────┘      └───────────────────┘      └─────────────┘
-                            │                            │
-                            ▼                            ▼
-                     ┌─────────────┐             ┌───────────────┐
-                     │ Cache/Rate  │             │    Token      │
-                     │  Limiting   │             │   Rotation    │
-                     └─────────────┘             │ (Round-robin) │
-                                                 └───────────────┘
+```mermaid
+graph LR
+    A[Cliente<br/>OpenCode] -->|:9010| B[Headroom AI<br/>Cache + Rate Limit]
+    B -->|:9020| C[Agnes Proxy<br/>Token Rotation]
+    C --> D[AgnesAI API]
+    
+    style A fill:#1e40af,stroke:#3b82f6,color:#fff
+    style B fill:#0f1629,stroke:#1e293b,color:#e2e8f0
+    style C fill:#0f1629,stroke:#1e293b,color:#e2e8f0
+    style D fill:#1e40af,stroke:#3b82f6,color:#fff
 ```
 
 ### Como funciona

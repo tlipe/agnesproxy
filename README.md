@@ -35,14 +35,19 @@ graph LR
 
 ## Modelo agnes-2.5-flash
 
-| Especificação | Valor |
-|---------------|-------|
-| Input tokens | ilimitado (context window grande) |
-| Output tokens | até 8192 |
-| Context window | 32k+ tokens |
-| Suporte | chat completions, reasoning |
-| Velocidade | alta (flash) |
-| Custo | baixo |
+| Especificação  | Valores                                                                                |
+| -------------- | -------------------------------------------------------------------------------------- |
+| Input tokens   | até **512K** de contexto                                                               |
+| Output tokens  | até **65.5K**                                                                          |
+| Context window | **512K tokens**                                                                        |
+| API            | **OpenAI-compatible**                                                                  |
+| Endpoint       | `/v1/chat/completions`                                                                 |
+| Reasoning      | **Sim**                                                                                |
+| Tool calling   | **Sim**                                                                                |
+| Vision         | **Sim**, via imagem                                                                    |
+| Streaming      | **Sim**                                                                                |
+| Velocidade     | Alta — modelo Flash                                                                    |
+| Custo          | **Atualmente grátis em promoção**; referência de preço: $0,03/M input e $0,15/M output |
 
 ## Instalação
 

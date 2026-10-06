@@ -66,6 +66,8 @@ cargo build --release
 ./target/release/agnesproxy
 ```
 
+### Ou utilize o CLI em https://github.com/tlipe/agnesproxy/releases
+
 ## Uso
 
 Qualquer cliente OpenAI-compatível. Configure `BASE_URL` para `http://127.0.0.1:9010/v1`.

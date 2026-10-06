@@ -10,6 +10,8 @@ Proxy de rotação automática de tokens para AgnesAI. Gerencia múltiplos token
 | Rust toolchain | stable |
 | Tokens AgnesAI | válidos |
 
+- Pegue seus tokens aqui: https://platform.agnes-ai.com/
+
 ## Arquitetura
 
 ```mermaid

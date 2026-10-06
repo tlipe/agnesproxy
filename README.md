@@ -47,13 +47,14 @@ graph LR
 ```bash
 # Compilar
 cargo build --release
+# Binário: target/release/agnesproxy.exe (~3.5 MB)
 
 # Adicionar tokens
-./target/release/agnes-token-proxy add <token1>
-./target/release/agnes-token-proxy add <token2>
+./target/release/agnesproxy add <token1>
+./target/release/agnesproxy add <token2>
 
-# Iniciar proxy + headroom
-./target/release/agnes-token-proxy init
+# Iniciar (menu interativo)
+./target/release/agnesproxy
 ```
 
 ## Uso
@@ -102,10 +103,11 @@ curl http://127.0.0.1:9020/v1/chat/completions \
 
 | Comando | Descrição |
 |---------|-----------|
-| `init` | Inicia proxy (9020) + Headroom (9010) |
+| (sem args) | Abre menu interativo |
+| `init` | Inicia proxy (9020) + Headroom (9010) direto |
 | `add <token>` | Adiciona token ao pool |
 | `list` | Lista todos os tokens cadastrados |
-| `remove <index>` | Remove token por índice |
+| `remove` | Remove token (menu interativo) |
 
 ## Implementação
 

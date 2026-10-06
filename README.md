@@ -101,6 +101,46 @@ curl http://127.0.0.1:9020/v1/chat/completions \
   }'
 ```
 
+## Templates
+
+### OpenCode
+
+```json
+"agnes-ai": {
+      "name": "Agnes AI",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:9010/v1",
+        "apiKey": "key123"
+      },
+      "models": {
+        "agnes-2.5-flash": {
+          "name": "Agnes 2.5 Flash",
+          "limit": {
+            "context": 524288,
+            "output": 65536
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "reasoning": true,
+          "variants": {
+            "low": {
+              "effort": "low"
+            },
+            "medium": {
+              "effort": "medium"
+            },
+            "high": {
+              "effort": "high"
+            }
+          }
+        }
+      }
+    }
+```
+
 ## Comandos
 
 | Comando | Descrição |

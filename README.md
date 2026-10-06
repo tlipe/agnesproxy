@@ -11,6 +11,8 @@ Proxy de rotação automática de tokens para AgnesAI. Gerencia múltiplos token
 | Tokens AgnesAI | válidos |
 
 - Pegue seus tokens aqui: https://platform.agnes-ai.com/
+- Headroom Github: https://github.com/headroomlabs-ai/headroom
+- Rust: https://rust-lang.org/tools/install/
 
 ## Arquitetura
 

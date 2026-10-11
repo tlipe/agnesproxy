@@ -1,6 +1,6 @@
 # Agnes Token Proxy
 
-Automatic token rotation proxy for AgnesAI. Manages multiple tokens using a round-robin strategy and integrates with Headroom AI for caching and request optimization.
+Automatic token rotation proxy for AgnesAI. Manages multiple tokens using a round-robin strategy and integrates with Headroom AI for caching and request optimization. AgnesProxy.
 
 ## Requirements
 

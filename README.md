@@ -187,6 +187,11 @@ curl http://127.0.0.1:9020/v1/chat/completions \
 | `list` | Lists all registered tokens |
 | `remove` | Removes a token (interactive menu) |
 
+## Available models
+
+- `agnes-2.5-flash`
+- `agnes-3.0-flash`
+
 ## Implementation
 
 - **Language:** Rust
